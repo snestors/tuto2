@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:tuto/src/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(context) {
-    return MaterialApp(
-      home: Center(child: Text("Hola Mundo.")),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
 }

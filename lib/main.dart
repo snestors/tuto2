@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final wordPair = "WordPair.random"
-
+    final wordPair = WordPair.random();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -27,8 +25,8 @@ class MyApp extends StatelessWidget {
             "My first app",
           ),
         ),
-        body: const Center(
-          child: Text("Hola"),
+        body: Center(
+          child: Text(wordPair.asPascalCase),
         ),
       ),
     );

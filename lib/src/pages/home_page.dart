@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Titulo"),
+        title: const Text("Mi primera app."),
         centerTitle: true,
         elevation: 5.5,
       ),
@@ -23,7 +23,10 @@ class HomePage extends StatelessWidget {
               "Numero de Taps:",
               style: textSytle,
             ),
-            Conteo(),
+            Text(
+              "0",
+              style: textSytle,
+            ),
           ],
         ),
       ),
@@ -34,25 +37,5 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
-  }
-}
-
-class Conteo extends StatefulWidget {
-  Conteo({Key? key}) : super(key: key);
-
-  @override
-  State<Conteo> createState() => _ConteoState();
-}
-
-class _ConteoState extends State<Conteo> {
-  int conteo = 0;
-
-  void _increment() {
-    conteo++;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('$conteo');
   }
 }

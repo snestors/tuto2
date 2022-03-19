@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  final opciones = ["uno", "dos", "tres", "cuatro", "cinco"];
+  final opciones = ["uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd"];
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tuto/src/pages/home_page.dart';
+import 'package:tuto/src/pages/home.dart';
+//import 'package:tuto/src/pages/home_page.dart';
+
+
 
 
 

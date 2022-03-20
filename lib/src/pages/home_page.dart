@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomePageTemp extends StatelessWidget {
+  HomePageTemp({Key? key}) : super(key: key);
 
   final opciones = ["uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd","uno", "dos", "tres", "cuatro", "cinco","6asdas","asd"];
 
@@ -11,25 +11,33 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Componentes Temps"),
       ),
-      body: ListView(children: _crearItems()),
+      body: ListView(children: _crearItemsCorta()),
     );
   }
 
-  List<Widget> _crearItems() {
-    List<Widget> lista = <Widget>[];
 
-    for (String opt in opciones) {
-      final tempWidget = ListTile(
-        title: Text(opt),
-      );
 
-      lista
-        ..add(tempWidget)
-        ..add(const Divider(
-          color: Colors.red,
-        ));
-    }
+List<Widget> _crearItemsCorta() {
 
-    return lista;
-  }
+
+  return opciones.map((e) {
+
+    return Column(
+      children: [
+        ListTile(
+          title: Text(e), 
+          subtitle: const Text("Cualquier Vaina"),
+          leading: const Icon(Icons.account_balance_wallet),
+          trailing: const Icon(Icons.arrow_forward),
+          onTap: () {},
+        ),
+        Divider(color: Colors.blueAccent[900],),
+      ],
+    );
+
+
+
+
+  }).toList();
+}
 }

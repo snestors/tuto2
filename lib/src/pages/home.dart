@@ -12,7 +12,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Componentes"),
       ),
-      body: _lista(),
+      body: Center(child: Text("Hola mundo")),
+      
+      drawer: Drawer(
+      
+        child: _lista(),
+      )
     );
   }
 

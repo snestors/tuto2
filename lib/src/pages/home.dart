@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+//import 'package:tuto/src/pages/alert_page.dart';
 import 'package:tuto/src/providers/menu_providers.dart';
+import 'package:tuto/src/utils/icon_strings_util.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,30 +10,64 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Componentes"),
+        title: const Text("Componentes"),
       ),
       body: _lista(),
     );
   }
 
- Widget _lista() {
+  Widget _lista() {
+    return FutureBuilder(
+      future: menuProvider.cargarData(),
+      initialData: const [],
+      builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+        // print(snapshot.data);
 
-   print(menuProvider.opciones);
+        return ListView(
+          children: _listItems(snapshot.data, context),
+        );
+      },
+    );
 
-   return ListView(children: _ListItems(),);
+    //print(menuProvider.opciones);
+    /*
+  menuProvider.cargarData().then((r) {
+    print("lista");
+    print(r);
+  });*/
 
- }
+    //return
+  }
 
-List<Widget> _ListItems() {
-  return [
-    ListTile(title: Text("Hola mundo"),),
-    Divider(),
-    ListTile(title: Text("Hola mundo"),),
-    Divider(),
-    ListTile(title: Text("Hola mundo"),),
-    Divider(),
-    ListTile(title: Text("Hola mundo"),),
-    Divider(),
-  ];
-}
+  List<Widget> _listItems(List<dynamic>? a, BuildContext context) {
+    final List<Widget> opciones = [];
+
+    if (a != null) {
+      for (var opt in a) {
+        final widgetTemp = ListTile(
+          title: Text(opt['ruta'].toString()),
+          leading: getIcon(opt["icon"]),
+          trailing: const Icon(
+            Icons.keyboard_arrow_right,
+            color: Colors.blue,
+          ),
+          onTap: () {
+            Navigator.pushNamed(context, opt['ruta']);
+            /*
+            final route = MaterialPageRoute(builder: (context){
+              return const AlertPage();
+            });
+            Navigator.push(context, route);
+  */
+          },
+        );
+
+        opciones
+          ..add(widgetTemp)
+          ..add(const Divider());
+      }
+    }
+
+    return opciones;
+  }
 }

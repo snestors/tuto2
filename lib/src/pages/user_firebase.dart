@@ -24,7 +24,7 @@ class AddUser extends StatelessWidget {
             'company': company, // Stokes and Sons
             'age': age // 42
           })
-          .then((value) => print("User Added ${value}"))
+          .then((value) => print("User Added"))
           .catchError((error) => print("Failed to add user: $error"));
     }
 

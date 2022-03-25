@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "210164140219",
+    "project_id": "aygflutter",
+    "storage_bucket": "aygflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210164140219:android:097852811bc66b2347019e",
+        "android_client_info": {
+          "package_name": "com.example.tuto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210164140219-cap4ecl5ct5nh9njesj24jjond8nak1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwqCrQTK3LqRz2QjwSibCwy7901gH_6UI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210164140219-cap4ecl5ct5nh9njesj24jjond8nak1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tuto/firebase_options.dart';
-import 'src/app.dart';
+import 'package:tuto/src/app.dart';
+//import 'src/app.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {

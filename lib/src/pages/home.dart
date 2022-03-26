@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:tuto/src/pages/alert_page.dart';
 import 'package:tuto/src/providers/menu_providers.dart';
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Componentes"),
       ),
-      body: Center(child: Text("Hola mundo")),
+      body: const Center(child: Text("Hola mundo")),
       
       drawer: Drawer(
       
@@ -71,8 +72,21 @@ class HomePage extends StatelessWidget {
           ..add(widgetTemp)
           ..add(const Divider());
       }
+      opciones.add(_singOut(context));
     }
 
     return opciones;
   }
+
+
+  Widget _singOut(context) {
+    return TextButton(onPressed: () {
+
+      
+      FirebaseAuth.instance.signOut();
+      Navigator.popAndPushNamed(context, "login");
+    }, child: const Text("Sing Out"));
+  }
+
+  
 }

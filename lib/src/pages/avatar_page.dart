@@ -11,23 +11,23 @@ class AvatarPage extends StatelessWidget {
       actions: <Widget>[
 
         Container(
-          padding: EdgeInsets.all(5),
-          child: CircleAvatar(
+          padding: const EdgeInsets.all(5),
+          child: const CircleAvatar(
             backgroundImage: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Stan_Lee_by_Gage_Skidmore_3.jpg/800px-Stan_Lee_by_Gage_Skidmore_3.jpg"),
             radius: 20,
           ),
         ),
 
         Container(
-          margin: EdgeInsets.only(right: 10),
-          child: CircleAvatar(
+          margin: const EdgeInsets.only(right: 10),
+          child: const CircleAvatar(
             child: Text("SL"),
             backgroundColor: Colors.brown,
           ),
         )
         
       ],),
-      body: Center(child: FadeInImage(
+      body: const Center(child: FadeInImage(
       image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Stan_Lee_by_Gage_Skidmore_3.jpg/800px-Stan_Lee_by_Gage_Skidmore_3.jpg"),
       placeholder: AssetImage('assets/jar-loading.gif'),)),
     );

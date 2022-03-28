@@ -8,7 +8,7 @@ import 'package:tuto/src/pages/user_firebase.dart';
 
 Map<String, WidgetBuilder> getApplicationRoutes() {
   return <String, WidgetBuilder>{
-    '/': (BuildContext context) => AddUser("Nestor", "company", 20),
+    '/': (BuildContext context) => HomePage(),
     'alert': (BuildContext context) => const AlertPage(),
     'avatar': (BuildContext context) => const AvatarPage(),
     'card': (BuildContext context) => const CardPage(),

@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tuto/src/pages/user_firebase.dart';
 //import 'package:tuto/src/pages/alert_page.dart';
 import 'package:tuto/src/providers/menu_providers.dart';
 import 'package:tuto/src/utils/icon_strings_util.dart';
@@ -8,17 +10,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!.uid;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Componentes"),
-      ),
-      body: Center(child: Text("Hola mundo")),
-      
-      drawer: Drawer(
-      
-        child: _lista(),
-      )
-    );
+        appBar: AppBar(
+          title: Text("${user}"),
+        ),
+        body: LeeUserColections(),
+        drawer: Drawer(
+          child: _lista(),
+        ));
   }
 
   Widget _lista() {
@@ -74,5 +75,13 @@ class HomePage extends StatelessWidget {
     }
 
     return opciones;
+  }
+
+  _sing_out() {
+    return TextButton(
+        onPressed: () {
+          FirebaseAuth.instance.signOut();
+        },
+        child: Text("data"));
   }
 }

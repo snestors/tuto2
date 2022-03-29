@@ -14,12 +14,13 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text("${user}"),
+          title: Text(user),
         ),
-        body: LeeUserColections(),
+        body: const LeeUserColections(),
         drawer: Drawer(
           child: _lista(),
         ));
+        
   }
 
   Widget _lista() {
@@ -82,6 +83,6 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           FirebaseAuth.instance.signOut();
         },
-        child: Text("data"));
+        child: const Text("data"));
   }
 }
